@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exoplanet photometry · Daniel Tsen</title>
+<meta name="description" content="Ground-based follow-up photometry on TESS candidate TOI 5147.01 at the GMU Observatory: plate solving, calibrated light curves, and clean NEB checks.">
+<meta name="theme-color" content="#080B10">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Exoplanet photometry · Daniel Tsen">
+<meta property="og:description" content="Ground-based follow-up photometry on TESS candidate TOI 5147.01 at the GMU Observatory: plate solving, calibrated light curves, and clean NEB checks.">
+<meta property="og:url" content="https://hammerheadllama.github.io/exoplanet.html">
+<meta property="og:image" content="https://hammerheadllama.github.io/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="Screen recording frame of the lab simulation with 500 agents">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://hammerheadllama.github.io/exoplanet.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%23080B10%22/%3E%3Cpath%20d%3D%22M6%2011h20M6%2021h20M11%206v20M21%206v20%22%20stroke%3D%22%231F2833%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%2221%22%20cy%3D%2211%22%20r%3D%224%22%20fill%3D%22%23FFB547%22/%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2221%22%20r%3D%222.5%22%20fill%3D%22%2362D6F5%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&display=swap&text=%E6%9B%BE%E6%B5%A9%E5%85%81%E8%98%87%E6%98%B1%E9%BD%8A%E5%AE%B6%E5%BA%AD%E6%94%B6%E6%94%AF%E8%AA%BF%E6%9F%A5">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas><div class="vignette" aria-hidden="true"></div>
+<a class="sr skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html" aria-label="Daniel Tsen, back to the city map"><img class="avatar" src="assets/img/me-face.webp" alt="" width="320" height="320"><b>Daniel Tsen</b><span lang="zh-Hant">曾浩允</span></a>
+    <nav class="tabs" aria-label="Pages"><a href="index.html"><i>MAP</i>City</a><a href="about.html"><i>HOME</i>About</a><a href="simulation.html"><i>LAB</i>Simulation</a><a href="peptides.html"><i>BIO</i>Peptides</a><a href="exoplanet.html" aria-current="page"><i>OBS</i>Exoplanet</a><a href="builds.html"><i>SHOP</i>Builds</a><a href="honors.html"><i>HALL</i>Honors</a></nav>
+  </div>
+</header>
+<main id="main" class="page">
+  <header class="hero">
+    <p class="district">Observatory <span>· GMU Young Scholars</span></p>
+    <h1>Exoplanet follow-up photometry</h1>
+    <p class="lede">A planet crossing its star blocks a small fraction of the light, so it shows up as a dip in the star’s brightness. TESS flagged TOI 5147.01 as a candidate. My part was checking it from the ground.</p>
+    <p class="meta"><b>NASA Data Science Analysis and Scholarly Research Paper Writing Young Scholars Internship</b>, George Mason University · under Prof. Peter Plavchan, Department of Physics &amp; Astronomy · summer 2025 · Python, Jupyter, AstroImageJ</p>
+  </header>
+
+  <section class="block" aria-labelledby="res-h">
+    <div class="label"><b>Result</b>TOI 5147.01</div>
+    <div class="body">
+      <h2 id="res-h">Light curves, and the NEB checks cleared</h2>
+      <div class="prose"><p>Calibrated light curves for TOI 5147.01. The nearby-eclipsing-binary checks came back clean.</p></div>
+      <div class="figrow">
+        <figure><img src="assets/img/exo-frame.webp" width="686" height="954" loading="lazy" decoding="async" alt="AstroImageJ window showing one 4096 by 4096 pixel FITS frame of the TOI 5147.01 star field" data-zoom><figcaption><b>Fig. 1</b>One raw frame of the TOI 5147.01 field in AstroImageJ (4096 × 4096 FITS), before calibration and plate solving.</figcaption></figure>
+        <figure><img src="assets/img/exo-lightcurve.webp" width="722" height="700" loading="lazy" decoding="async" alt="AstroImageJ plot of the target star’s normalized relative flux over time: raw, airmass-detrended, detrended with a transit model, and residuals" data-zoom><figcaption><b>Fig. 2</b>The target star’s light curve in AstroImageJ: raw, airmass-detrended, detrended with a transit model, and residuals.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="pipe-h">
+    <div class="label"><b>Method</b>Frame to light curve</div>
+    <div class="body">
+      <h2 id="pipe-h">What I did with the frames</h2>
+      <ol class="steps">
+        <li><p>Scheduling through the Swarthmore transit finder, coordination through ExoFOP.</p></li>
+        <li><p>Observed the TOI 5147.01 field from the ground at the GMU Observatory, then worked through the FITS frames.</p></li>
+        <li><p>Plate-solved every frame: matched the detected stars against a reference catalog so each one gets its right ascension and declination.</p></li>
+        <li><p>Flagged artifacts like the streaks satellites leave when they cross the field during an exposure.</p></li>
+        <li><p>Calibrated with dark and flat frames.</p></li>
+        <li><p>Ran multi-aperture photometry in AstroImageJ and produced calibrated light curves.</p></li>
+        <li><p>Ran nearby-eclipsing-binary checks under the TFOP SG1 guidelines, with the NEB analysis macro and dmag-RMS plots.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="tw-h">
+    <div class="label"><b>Try it</b>The transit method</div>
+    <div class="body">
+      <h2 id="tw-h" class="sr">Transit widget</h2>
+  <div class="widget">
+    <div class="w-head"><b>Transit, in your browser</b><span>illustration · example values</span></div>
+    <canvas id="transit" role="img" aria-label="Animated planet crossing a limb-darkened star, with the light curve it produces"></canvas>
+    <div class="sliders">
+      <label for="tr-p"><span>radius ratio Rp/R* <output id="tr-p-v">0.100</output></span><input type="range" id="tr-p" min="0.03" max="0.2" step="0.005" value="0.1"></label>
+      <label for="tr-b"><span>impact parameter b <output id="tr-b-v">0.30</output></span><input type="range" id="tr-b" min="0" max="1.15" step="0.01" value="0.3"></label>
+    </div>
+    <div class="readout"><span>depth <b id="tr-depth">–</b></span><span>(Rp/R*)² <b id="tr-geo">–</b></span><button class="btn small ghost" id="tr-play" type="button">Pause</button></div>
+    <p class="w-note">The star uses quadratic limb darkening with example coefficients (u1 = 0.40, u2 = 0.26), so its edge is dimmer than its center. That rounds the bottom of the dip. Near the center of the star the dip is deeper than (Rp/R*)²; near the edge it is shallower. Past b = 1 − Rp/R* the transit turns grazing, and past 1 + Rp/R* it misses the star.</p>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="off-h">
+    <div class="label"><b>Off the clock</b>My own telescope</div>
+    <div class="body">
+      <h2 id="off-h">Still looking up</h2>
+      <div class="prose"><p>I own a Celestron StarSense Explorer LT 80AZ. I’m designing a 3D-printable equatorial mount and telescope in Fusion 360, based on the OpenAstroTech community’s work. The printing will be outsourced.</p></div>
+      <div class="figrow" style="max-width:30rem"><figure><img src="assets/img/telescope-night.webp" width="1000" height="1333" loading="lazy" decoding="async" alt="A telescope on a tripod outdoors at night under a bright moon, with trees lit from below" data-zoom><figcaption><b>Fig. 3</b>Out with the telescope at night.</figcaption></figure></div>
+    </div>
+  </section>
+<nav class="next" aria-label="Next stop"><a href="builds.html"><span>Next stop</span><b>The workshop →</b></a><a href="index.html"><span>Back to</span><b>The city map</b></a></nav>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <span>Daniel Tsen · Hong Kong · updated Nov 2026</span>
+    <span class="foot-links"><a href="mailto:daniel.tsen9708@gmail.com">daniel.tsen9708@gmail.com</a><a href="https://www.linkedin.com/in/daniel-tsen-28a840286/" data-placeholder rel="noopener">LinkedIn</a><a href="assets/Daniel-Tsen-CV.pdf">CV (PDF)</a><a href="index.html">Back to the map</a></span>
+  </div>
+</footer>
+<dialog id="lightbox" aria-label="Enlarged figure"><button class="btn small ghost" type="button" data-close>Close</button><img alt=""><p></p></dialog>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/widgets.js" defer></script>
+</body>
+</html>
