@@ -86,7 +86,7 @@
     { id: 'hall', i: 1, j: 3, h: 34, name: 'HALL', sub: 'Honors', href: 'honors.html',
       title: 'Honors',
       text: 'HKYPT Silver, HiMCM Honorable Mention, AIME qualifier, VEX Inspire Award, and the rest of the board.',
-      stat: '10 entries' },
+      stat: '12 entries' },
     { id: 'home', i: 3, j: 3, h: 24, name: 'HOME', sub: 'About me', href: 'about.html',
       title: 'About',
       text: 'Who I am, how physics started for me, and how to reach me.',
