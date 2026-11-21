@@ -69,7 +69,7 @@
   var LANDMARKS = [
     { id: 'lab', i: 3, j: 1, h: 96, name: 'LAB', sub: 'Urban simulation', href: 'simulation.html',
       title: 'Generative-agent urban simulation',
-      text: 'LLM-driven pedestrians in Da’an District, Taipei. I built the social gate, byte-identical replay, fork-and-compare and the Gates 0–7 suite. Accepted as a long oral at TAAI 2026.',
+      text: 'LLM-driven pedestrians in Da’an District, Taipei. I built the social gate, byte-identical replay, fork-and-compare and the Gates 0–7 suite. Presented as a long oral at TAAI 2026.',
       stat: 'Largest run: 500 agents' },
     { id: 'bio', i: 1, j: 1, h: 46, name: 'BIO LAB', sub: 'Peptide ML', href: 'peptides.html',
       title: 'Peptide self-assembly from sequence',
@@ -176,7 +176,7 @@
     'I did ground-based follow-up photometry on TESS candidate TOI 5147.01 at the GMU Observatory.',
     'The Wirtz pump lifted 170.7 cm. The model’s bound was 379 cm, and no run beat it.',
     'A VEX robot failed inspection 11.76 cm over the limit. Unit conversion.',
-    'The sim paper is a long oral at TAAI 2026, Nov 20–21.',
+    'I presented the sim paper as a long oral at TAAI 2026, Nov 20–21.',
     'In the HKYPT final, the other team said the model ignored surface tension. They were right.',
     'LLM_CACHE=0 cost a whole night. Strict replay now throws if the cache is off.'
   ];
