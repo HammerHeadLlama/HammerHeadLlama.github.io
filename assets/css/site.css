@@ -19,6 +19,7 @@
 /* Hallmark · reworded "Hover a row and the board flips" out of the Honors lede · the flip only runs on mouse hover, so the line promised touch and keyboard users something that never happens; the flip stays as a hover detail */
 /* Hallmark · honors.html (B4): reworded the dotted results to commas and spelled out "HM" as "Honorable Mention in Algebra" · gate 63, and the audit named HM as unexplained. Dropped the .flap uppercase tracking (DESIGN.md 3.2 keeps mono caps for codes, table heads and dt only). Added visible h2s "Competition results" and "Papers", a Key strip from the board's own rows */
 /* Hallmark · about.html (D4): the portrait and facts move into the hero lead; the contact section takes the Post Office code G3 (DESIGN.md § 1). Dropped kickers "Logs / How physics started", "Off the clock / When I’m not building", "Training / School and courses", "Post office / Contact" · DESIGN.md 3.3; their first words now sit in .idx. The hobby bento becomes the shared card grid (DESIGN.md 3.5). Middle dots in the facts and hobby labels became semicolons and commas, gate 63 */
+/* Hallmark · index.html (MAP): dropped p.district "Hong Kong · Taipei" for a .where line "MAP Hong Kong, Taipei", and the kickers "The work / Lab, research, builds" and "Now / Nov 2026" · DESIGN.md 3.3; their h2s "Start here" and "What I’m doing now" are now visible. Directory codes "LAB · URBAN INFORMATICS", "BIO LAB", "OBSERVATORY", "WORKSHOP", "HALL", "HOME" became grid codes (D2 Lab, B2 Bio Lab, F1 Observatory, F4 Workshop, B4 Hall, D4 Home) by DESIGN.md 3.11. The HUD collapses under 1000px (3.11). 404.html takes the hero address; § 18 retires .district and .label */
 /* Hallmark · waive 25 · .prose and the bench rows run about 85 characters a line in IBM Plex Sans at 17px · DESIGN.md § 2 locks the body measure at 42rem for every page, and Simulation shares it */
 /* Hallmark · waive 77 · builds.html F4.1 and the key strip read thin · F4.1 is the tournament paragraph that frames F4.2 and F4.3, and the key strip is DESIGN.md 3.4 */
 
@@ -324,6 +325,10 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .intro .role{font-size:var(--t-14);color:var(--ink-2);line-height:1.5}
 .intro .cta,.cta-row{display:flex;flex-wrap:wrap;gap:var(--s-2)}
 .panel-open .intro{visibility:hidden}
+.where{margin:0;font-family:var(--mono);font-size:var(--t-14);color:var(--ink-3)}
+.where b{font-weight:500;color:var(--amber);margin-right:.5ch}
+.hud-more summary{display:none}
+.hud-more{display:grid;gap:var(--s-1)}
 .me{display:flex;align-items:center;gap:var(--s-4)}
 .me h1{white-space:nowrap}
 .me h1 .zh{font-size:.45em}
@@ -459,21 +464,14 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .hob-video video{width:100%;border-radius:var(--r);border:1px solid var(--line-2)}
 .hob-chair video{max-height:26rem;object-fit:cover}
 
-/* ---------- 18. Pages not yet migrated ----------
-   404 and the home sections still use these classes.
-   Each goes in that page's own PR (DESIGN.md § 4 retires most of them). Restyled to tokens only. */
-.district{margin:0;font-family:var(--mono);font-size:var(--t-14);color:var(--amber)}
-.district span{color:var(--ink-3)}
-.block > .label{position:sticky;top:calc(var(--nav-h) + var(--s-4));align-self:start;display:grid;gap:var(--s-1);font-family:var(--mono);font-size:var(--t-12);line-height:1.4;color:var(--ink-3)}
-.block > .label b{color:var(--amber);font-weight:500;font-size:var(--t-14)}
-.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--s-2)}
-.chips li{font-family:var(--mono);font-size:var(--t-12);line-height:1.4;color:var(--ink-2);border:1px solid var(--line-2);border-radius:var(--r);padding:var(--s-1) var(--s-2)}
+/* ---------- 18. Tables (About, Bio Lab) ---------- */
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r)}
 .tbl{width:100%;min-width:36rem;border-collapse:collapse;font-size:var(--t-14)}
 .tbl th,.tbl td{text-align:left;padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line);vertical-align:baseline}
 .tbl th{font-family:var(--mono);font-weight:500;font-size:var(--t-12);color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;background:var(--panel-solid)}
 .tbl tr:last-child td{border-bottom:0}
 .tbl td.n{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
 /* ---------- 19. Responsive ---------- */
 @media (width < 1000px){
   .hero{grid-template-columns:var(--index) minmax(0,1fr)}
@@ -485,7 +483,14 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
   .btn.small,.seg button{min-height:var(--tap)}
   .city-wrap{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column}
   .intro{position:static;width:auto;padding-left:var(--gutter);padding-right:var(--gutter-r);padding-block:var(--s-5) var(--s-4)}
-  .canvas-box{position:relative;height:min(calc(100svh - 150px),560px);min-height:360px}
+  .canvas-box{position:relative;height:420px;min-height:0}
+  .hud-stats > span:nth-of-type(2),.hud-stats > span:nth-of-type(3){display:none}
+  .hud-more summary{display:flex;align-items:center;gap:var(--s-2);min-height:var(--tap);cursor:pointer;list-style:none;font-size:var(--t-14);color:var(--ink)}
+  .hud-more summary::-webkit-details-marker{display:none}
+  .hud-more summary::after{content:"+";margin-left:auto;font-family:var(--mono);color:var(--amber)}
+  .hud-more[open] summary::after{content:"−"}
+  .hud-more{border-block:1px solid var(--line);margin-top:var(--s-2)}
+  #city-log li:nth-child(n+3){display:none}
   .shade{display:none}
   .hud{position:static;background:none;padding-block:var(--s-2) var(--s-4)}
   #city-log{text-align:left}
@@ -525,8 +530,8 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
   .jump nav{margin-left:0;border-top:1px solid var(--line)}
   .jump a:last-child{border-bottom:0}
   section.block{grid-template-columns:minmax(0,1fr);gap:var(--s-3);padding-block:var(--s-7)}
-  .idx,.block > .label{position:static;display:flex;flex-wrap:wrap;gap:0 var(--s-3);align-items:baseline;font-size:var(--t-12)}
-  .idx span,.block > .label b{font-size:var(--t-12)}
+  .idx{position:static;display:flex;flex-wrap:wrap;gap:0 var(--s-3);align-items:baseline;font-size:var(--t-12)}
+  .idx span{font-size:var(--t-12)}
   .pan{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r)}
   .pan img{min-width:680px;border:0}
   .sliders{grid-template-columns:minmax(0,1fr)}
