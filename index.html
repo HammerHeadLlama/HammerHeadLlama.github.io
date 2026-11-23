@@ -34,14 +34,14 @@
 <div class="city-wrap" id="city-wrap">
   <div class="shade" aria-hidden="true"></div>
   <div class="intro">
-    <p class="district">Hong Kong <span>· Taipei</span></p>
+    <p class="where"><b>MAP</b> Hong Kong, Taipei</p>
     <div class="me"><img src="assets/img/me-face.webp" alt="Daniel Tsen" width="320" height="320"><h1>Daniel Tsen<span class="zh" lang="zh-Hant">曾浩允</span></h1></div>
     <p class="role">Research Trainee at MIT City Science Lab @ Taipei Tech, part of the MIT Media Lab City Science network. IB Year 2 at Li Po Chun United World College of Hong Kong.</p>
     <p class="lede">At the lab I work on an LLM agent simulation of a Taipei district. This page is a small agent city of its own. Click a building, or walk in as one of the agents.</p>
     <ul class="proof">
       <li><a href="simulation.html"><b>TAAI 2026</b> Presented my first-author paper as a long oral</a></li>
       <li><a href="peptides.html"><b>Published</b> Peptide ML paper, doi:10.13021/MARS/15267</a></li>
-      <li><a href="honors.html"><b>Honors</b> HKYPT Silver · HiMCM Honorable Mention · AIME qualifier</a></li>
+      <li><a href="honors.html"><b>Honors</b> HKYPT Silver, HiMCM Honorable Mention, AIME qualifier</a></li>
     </ul>
     <div class="cta"><button class="btn" id="walk-toggle" type="button" aria-pressed="false">Walk in as an agent</button><a class="btn ghost" href="#start">Skip to the work ↓</a></div>
     <p class="walk-hint" id="walk-hint" hidden><b>WALK MODE</b>Click or tap the map to walk. Arrow keys work too. Walk past other agents: if the social gate scores 0.45 or more, they stop and tell you something. Their lines are canned facts about me.</p>
@@ -60,7 +60,9 @@
   <div class="hud">
       <div class="hud-left">
         <div class="hud-stats"><b id="hud-clock">DAY 1 · 18:00</b><span>AGENTS <b id="hud-agents">52</b></span><span>TALKS <b id="hud-talks">0</b></span><span>BRANCH <b id="hud-branch">base</b></span><span>STATE <b id="hud-hash">00000000</b></span></div>
+        <details class="hud-more" open><summary>Controls</summary>
         <div class="hud-btns"><button class="btn small ghost" id="btn-play" type="button">Pause</button><button class="btn small ghost" id="btn-quake" type="button">Inject earthquake</button><button class="btn small ghost" id="btn-replay" type="button">Replay same seed</button><button class="btn small ghost" id="btn-base" type="button" hidden>Back to base</button></div>
+        </details>
         <p class="hud-note">A toy model running in your browser, not lab data. Same seed and same events give the same state hash at every 10-minute mark. Your walking never touches the agents, so it can’t break replay.</p>
       </div>
       <ul id="city-log"></ul>
@@ -68,46 +70,46 @@
 </div>
 <main id="main" class="page">
   <section class="block" id="start" aria-labelledby="start-h">
-    <div class="label"><b>The work</b>Lab, research, builds</div>
+    <p class="idx"><span><b>MAP</b>.1</span><small>Directory</small></p>
     <div class="body">
-      <h2 id="start-h" class="sr">Start here</h2>
+      <h2 id="start-h">Start here</h2>
       <div class="directory">
         <a class="dir feature" href="simulation.html">
           <video data-auto muted loop playsinline preload="none" width="1280" height="720" poster="assets/video/sim-500-agents-poster.webp" aria-label="Screen recording of the lab simulation with 500 agents"><source src="assets/video/sim-500-agents.mp4" type="video/mp4"></video>
-          <span class="k">LAB · URBAN INFORMATICS</span>
+          <span class="k"><b>D2</b> Lab</span>
           <h3>Generative-agent urban simulation</h3>
           <p>LLM-driven pedestrians in Da’an District, Taipei. I built the social gate, byte-identical replay, fork-and-compare and the verification gates.</p>
           <span class="s">500 agents · TAAI 2026 long oral</span>
         </a>
         <a class="dir" href="peptides.html">
           <img src="assets/img/peptide-workflow.webp" width="1600" height="657" alt="" loading="lazy">
-          <span class="k">BIO LAB</span>
+          <span class="k"><b>B2</b> Bio Lab</span>
           <h3>Peptide self-assembly from sequence</h3>
           <p>Three ML pipelines. Best cross-validated AUC 0.996. Oversampling ran before the split, so I read it as an upper bound.</p>
           <span class="s">doi:10.13021/MARS/15267</span>
         </a>
         <a class="dir" href="exoplanet.html">
           <img src="assets/img/exo-lightcurve.webp" width="722" height="700" alt="" loading="lazy">
-          <span class="k">OBSERVATORY</span>
+          <span class="k"><b>F1</b> Observatory</span>
           <h3>Follow-up photometry on TOI 5147.01</h3>
           <p>Observed at the GMU Observatory and reduced the frames in AstroImageJ. Calibrated light curves, and the nearby-eclipsing-binary checks came back clean.</p>
           <span class="s">TESS candidate</span>
         </a>
         <a class="dir" href="builds.html#wirtz">
           <img src="assets/img/pump-notes-1.webp" width="1000" height="1293" alt="" loading="lazy">
-          <span class="k">WORKSHOP</span>
+          <span class="k"><b>F4</b> Workshop</span>
           <h3>Wirtz pump: 170.7 cm lift</h3>
           <p>Derived the pressure stack across the coils, built two pumps, and pushed water to 170.7 cm. The model’s upper bound, 379 cm, held for every run. The rest of the workshop: VEX robots, a Monte Carlo model, side builds.</p>
           <span class="s">HKYPT Silver Medal</span>
         </a>
         <a class="dir compact" href="honors.html">
-          <span class="k">HALL</span>
+          <span class="k"><b>B4</b> Hall</span>
           <h3>Honors</h3>
           <p>Harvard Prize Book, HKYPT Silver, HiMCM Honorable Mention, AIME qualifier, UKMT Gold, VEX Inspire Award.</p>
           <span class="s">12 entries</span>
         </a>
         <a class="dir compact" href="about.html">
-          <span class="k">HOME</span>
+          <span class="k"><b>D4</b> Home</span>
           <h3>About</h3>
           <p>Who I am, how physics started for me, and how to reach me.</p>
           <span class="s">IB Year 2 · Hong Kong</span>
@@ -116,9 +118,9 @@
     </div>
   </section>
   <section class="block" aria-labelledby="now-h">
-    <div class="label"><b>Now</b>Nov 2026</div>
+    <p class="idx"><span><b>MAP</b>.2</span><small>Nov 2026</small></p>
     <div class="body">
-      <h2 id="now-h" class="sr">What I’m doing now</h2>
+      <h2 id="now-h">What I’m doing now</h2>
       <ul class="now">
         <li><span>Nov 20–21</span><p>Presented my first-author paper at the TAAI 2026 High School Special Session in New Taipei City. Long oral, 12 minutes plus 2 of Q&amp;A, in English.</p></li>
         <li><span>This term</span><p>Still at the lab part-time alongside IB Year 2, writing the midterm report due Nov 13.</p></li>
