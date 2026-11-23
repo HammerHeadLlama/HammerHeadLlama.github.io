@@ -12,6 +12,8 @@
 /* Hallmark · reworded "High Stakes" and "Over Under" (the 23083Z and 23083Y headings) to colon and comma form, plus the dotted bench meta · gate 63 names middle-dot strings; the footer line stays dotted by DESIGN.md 3.8 */
 /* Hallmark · builds.html adds Fig. and Rec. labels in page order, a Key strip, Limits and Credit built from facts already on the page, captions for three moved photos and a poster frame for ruler-launch.mp4 · DESIGN.md 3.4, 3.6 and 3.7 */
 /* Hallmark · waive 44c · builds.html hero ends at 1044px at 1440 · DESIGN.md 3.2 puts the lead asset inside the hero; the h1 and lede sit well above the 800px fold */
+/* Hallmark · reworded "Why 0.996 is an upper bound" to "Limits" · DESIGN.md 3.7 names every Limits block "Limits"; its two paragraphs moved verbatim into the notes table */
+/* Hallmark · peptides.html (B2): dropped kickers "Result / Cross-validated", "Limits / Read with the table", "Method / Three representations", "Try it / k-mer counting", "Paper / Published Jan 1, 2026" · DESIGN.md 3.3; the dates and words now sit in .idx. Fixed "the NLP-inspired one, above" to "below": the widget sits below. Added a Key strip and a Credit table from facts already on the page; metrics joined with commas, gate 63 */
 /* Hallmark · waive 25 · .prose and the bench rows run about 85 characters a line in IBM Plex Sans at 17px · DESIGN.md § 2 locks the body measure at 42rem for every page, and Simulation shares it */
 /* Hallmark · waive 77 · builds.html F4.1 and the key strip read thin · F4.1 is the tournament paragraph that frames F4.2 and F4.3, and the key strip is DESIGN.md 3.4 */
 
@@ -395,17 +397,23 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .thumbs figure{gap:0}
 .thumbs img{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:var(--r);border:1px solid var(--line)}
 
+/* ---------- 17c. Bio Lab (peptides.html, B2) ---------- */
+.hero > .lead.hero-canvas{display:grid;gap:var(--s-2)}
+#pep-hero{width:100%;height:clamp(140px,18vw,210px);display:block;border:1px solid var(--line);border-radius:var(--r);background:var(--ground-2)}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-5)}
+.trio .card h3{font-size:var(--t-17)}
+.note{font-size:var(--t-14);color:var(--ink-2);max-width:42rem}
+.w-note.warn{color:var(--amber)}
+.card.paper{max-width:46rem;gap:var(--s-4)}
+.card.paper h3{font-size:var(--t-21)}
+
 /* ---------- 18. Pages not yet migrated ----------
-   About, Peptides, Exoplanet, Honors, 404 and the home sections still use these classes.
+   About, Exoplanet, Honors, 404 and the home sections still use these classes.
    Each goes in that page's own PR (DESIGN.md § 4 retires most of them). Restyled to tokens only. */
 .district{margin:0;font-family:var(--mono);font-size:var(--t-14);color:var(--amber)}
 .district span{color:var(--ink-3)}
 .block > .label{position:sticky;top:calc(var(--nav-h) + var(--s-4));align-self:start;display:grid;gap:var(--s-1);font-family:var(--mono);font-size:var(--t-12);line-height:1.4;color:var(--ink-3)}
 .block > .label b{color:var(--amber);font-weight:500;font-size:var(--t-14)}
-.panel{background:var(--panel-solid);border:1px solid var(--line);border-radius:var(--r);padding:var(--s-5);min-width:0}
-.grid2,.grid3{display:grid;gap:var(--s-5)}
-.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--s-2)}
 .chips li{font-family:var(--mono);font-size:var(--t-12);line-height:1.4;color:var(--ink-2);border:1px solid var(--line-2);border-radius:var(--r);padding:var(--s-1) var(--s-2)}
 .steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:var(--s-3);max-width:46rem}
@@ -417,8 +425,6 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .tbl th{font-family:var(--mono);font-weight:500;font-size:var(--t-12);color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;background:var(--panel-solid)}
 .tbl tr:last-child td{border-bottom:0}
 .tbl td.n{font-family:var(--mono);font-variant-numeric:tabular-nums}
-.hero-canvas{margin:var(--s-2) 0 0;display:grid;gap:var(--s-1)}
-#pep-hero{width:100%;height:clamp(140px,18vw,210px);display:block;border-radius:var(--r)}
 /* About */
 .about-top{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:var(--s-7);align-items:center;padding-block:var(--s-8) var(--s-7)}
 .portrait{position:relative;margin:0;max-width:360px;border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden;background:var(--panel-solid)}
@@ -482,7 +488,7 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
   .canvas-box{position:absolute;inset:0}
 }
 @media (width < 900px){
-  .grid3,.split{grid-template-columns:minmax(0,1fr)}
+  .split,.trio{grid-template-columns:minmax(0,1fr)}
   .gallery.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hobbies{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hob-wide{grid-column:1 / -1;grid-row:auto}
@@ -518,13 +524,12 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
   .pan{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r)}
   .pan img{min-width:680px;border:0}
   .sliders{grid-template-columns:minmax(0,1fr)}
-  .gallery.g3,.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .row{grid-template-columns:minmax(0,1fr) auto}
+  .gallery.g3,  .row{grid-template-columns:minmax(0,1fr) auto}
   .row .k{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:0 var(--s-3)}
   .thumbs{width:5.5rem}
 }
 @media (width < 760px){
-  .about-top,.grid2{grid-template-columns:minmax(0,1fr)}
+  .about-top{grid-template-columns:minmax(0,1fr)}
   .portrait{max-width:260px}
 }
 @media (width < 700px){
