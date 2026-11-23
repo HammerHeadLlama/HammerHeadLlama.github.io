@@ -18,6 +18,7 @@
 /* Hallmark · exoplanet.html (F1): dropped kickers "Result / TOI 5147.01", "Method / Frame to light curve", "Try it / The transit method", "Off the clock / My own telescope" · DESIGN.md 3.3. The light curve leads the hero, so figures renumber (light curve Fig. 1, raw frame Fig. 2). Added a Key strip, Limits from the verified record and Credit from the page */
 /* Hallmark · reworded "Hover a row and the board flips" out of the Honors lede · the flip only runs on mouse hover, so the line promised touch and keyboard users something that never happens; the flip stays as a hover detail */
 /* Hallmark · honors.html (B4): reworded the dotted results to commas and spelled out "HM" as "Honorable Mention in Algebra" · gate 63, and the audit named HM as unexplained. Dropped the .flap uppercase tracking (DESIGN.md 3.2 keeps mono caps for codes, table heads and dt only). Added visible h2s "Competition results" and "Papers", a Key strip from the board's own rows */
+/* Hallmark · about.html (D4): the portrait and facts move into the hero lead; the contact section takes the Post Office code G3 (DESIGN.md § 1). Dropped kickers "Logs / How physics started", "Off the clock / When I’m not building", "Training / School and courses", "Post office / Contact" · DESIGN.md 3.3; their first words now sit in .idx. The hobby bento becomes the shared card grid (DESIGN.md 3.5). Middle dots in the facts and hobby labels became semicolons and commas, gate 63 */
 /* Hallmark · waive 25 · .prose and the bench rows run about 85 characters a line in IBM Plex Sans at 17px · DESIGN.md § 2 locks the body measure at 42rem for every page, and Simulation shares it */
 /* Hallmark · waive 77 · builds.html F4.1 and the key strip read thin · F4.1 is the tournament paragraph that frames F4.2 and F4.3, and the key strip is DESIGN.md 3.4 */
 
@@ -435,8 +436,31 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .board .ev small{display:block;font-weight:400;color:var(--ink-2);font-size:var(--t-14)}
 .flap{font-family:var(--mono);font-weight:500;color:var(--amber);font-size:var(--t-14)}
 
+/* ---------- 17f. Home (about.html, D4; contact is Post Office G3) ---------- */
+.hero > .lead.about-lead{display:grid;grid-template-columns:minmax(0,18rem) minmax(0,1fr);gap:var(--s-6);align-items:start}
+.portrait{margin:0;border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden;background:var(--panel-solid)}
+.portrait img{width:100%;height:auto;display:block;border:0}
+.about-facts{display:grid;gap:var(--s-5);min-width:0;align-content:start}
+.about-facts .facts dd{font-size:var(--t-14)}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-3) var(--s-4)}
+.mail a{font-family:var(--mono);font-size:var(--t-21);word-break:break-all}
+.offgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:var(--s-4);align-items:start}
+.hob{display:grid;gap:var(--s-2);align-content:start}
+.hob:hover{border-color:var(--amber)}
+.hob-wide:has(.hob-video.on){grid-column:span 2}
+.hob-photo{padding:0;overflow:hidden}
+.hob-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-bottom:1px solid var(--line)}
+.hob-photo .hob-k,.hob-photo h3{padding-inline:var(--s-5)}
+.hob-photo h3{padding-bottom:var(--s-5)}
+.hob-big{margin:0;font-family:var(--display);font-stretch:var(--display-stretch);font-weight:var(--display-weight);font-size:var(--t-28);line-height:1.1;color:var(--ink)}
+.hob-k{margin:0;font-family:var(--mono);font-size:var(--t-12);color:var(--ink-3)}
+.hob .muted{font-size:var(--t-14)}
+.hob-video{display:grid;gap:var(--s-2)}
+.hob-video video{width:100%;border-radius:var(--r);border:1px solid var(--line-2)}
+.hob-chair video{max-height:26rem;object-fit:cover}
+
 /* ---------- 18. Pages not yet migrated ----------
-   About, 404 and the home sections still use these classes.
+   404 and the home sections still use these classes.
    Each goes in that page's own PR (DESIGN.md § 4 retires most of them). Restyled to tokens only. */
 .district{margin:0;font-family:var(--mono);font-size:var(--t-14);color:var(--amber)}
 .district span{color:var(--ink-3)}
@@ -450,33 +474,6 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .tbl th{font-family:var(--mono);font-weight:500;font-size:var(--t-12);color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;background:var(--panel-solid)}
 .tbl tr:last-child td{border-bottom:0}
 .tbl td.n{font-family:var(--mono);font-variant-numeric:tabular-nums}
-/* About */
-.about-top{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:var(--s-7);align-items:center;padding-block:var(--s-8) var(--s-7)}
-.portrait{position:relative;margin:0;max-width:360px;border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden;background:var(--panel-solid)}
-.portrait img{width:100%;height:auto;display:block;border:0}
-.mail{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-3) var(--s-4)}
-.mail a{font-family:var(--mono);font-size:var(--t-21);word-break:break-all}
-.hobbies{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-4);grid-auto-flow:dense}
-.hob{position:relative;display:grid;gap:var(--s-2);align-content:end;min-height:12rem;overflow:hidden}
-.hob:hover{transform:translateY(-2px);border-color:var(--amber)}
-.hob-wide{grid-column:span 2;grid-row:span 2;align-content:start}
-.hob-wide:not(:has(.hob-video.on)){grid-row:auto}
-.hob-photo{grid-row:span 2;padding:0;align-content:stretch}
-.hob-photo img{width:100%;height:100%;object-fit:cover;min-height:18rem}
-.hob-photo .hob-k,.hob-photo h3{position:absolute;left:var(--s-4);z-index:1;margin:0}
-.hob-photo .hob-k{bottom:3.1rem}
-.hob-photo h3{bottom:var(--s-4)}
-.hob-photo::after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(0deg,var(--ground-fade),var(--ground-clear));pointer-events:none}
-.hob-big{margin:0;font-family:var(--display);font-stretch:var(--display-stretch);font-weight:var(--display-weight);font-size:var(--t-28);line-height:1.1;color:var(--ink)}
-.hob-k{margin:0;font-family:var(--mono);font-size:var(--t-12);color:var(--cyan)}
-.hob .muted{font-size:var(--t-14)}
-.hob-video{display:grid;gap:var(--s-2)}
-.hob-video video{width:100%;border-radius:var(--r);border:1px solid var(--line-2)}
-.hob-lang{grid-column:span 2;min-height:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--s-2) var(--s-5)}
-.hob-lang .muted{flex:1 1 20rem}
-.hob-chair{grid-row:span 2;align-content:start;gap:var(--s-2)}
-.hob-chair video{max-height:26rem;object-fit:cover}
-
 /* ---------- 19. Responsive ---------- */
 @media (width < 1000px){
   .hero{grid-template-columns:var(--index) minmax(0,1fr)}
@@ -501,8 +498,6 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 @media (width < 900px){
   .split,.trio{grid-template-columns:minmax(0,1fr)}
   .gallery.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .hobbies{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .hob-wide{grid-column:1 / -1;grid-row:auto}
 }
 @media (width < 820px){
   html{scroll-padding-top:calc(var(--tap) * 2 + var(--s-5))}
@@ -540,8 +535,9 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
   .thumbs{width:5.5rem}
 }
 @media (width < 760px){
-  .about-top{grid-template-columns:minmax(0,1fr)}
+  .hero > .lead.about-lead{grid-template-columns:minmax(0,1fr)}
   .portrait{max-width:260px}
+  .hob-wide:has(.hob-video.on){grid-column:auto}
 }
 @media (width < 700px){
   .dir.feature{grid-column:auto}
@@ -553,17 +549,13 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
   .board td.res{grid-column:2}
 }
 @media (width < 560px){
+  .mail a{font-size:var(--t-17)}
   .facts{grid-template-columns:minmax(0,1fr)}
   .facts dt{padding-bottom:0}
   .facts dd{border-top:0;padding-top:var(--s-1)}
   .facts dt:first-of-type{border-top:0}
   .now li{grid-template-columns:minmax(0,1fr);gap:0}
   #transit{height:440px}
-}
-@media (width < 520px){
-  .hobbies{grid-template-columns:minmax(0,1fr)}
-  .hob-photo{grid-row:auto}
-  .hob-lang{grid-column:auto}
 }
 @media (width < 360px){
   .stats,.stats:has(> .key-k){grid-template-columns:minmax(0,1fr)}
