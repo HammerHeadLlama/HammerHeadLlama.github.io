@@ -1,6 +1,6 @@
 # HammerHeadLlama.github.io
 
-Daniel Tsen's site, live at **https://hammerheadllama.github.io/**. Plain static files with no build step, served by GitHub Pages.
+Daniel Tsen's site, live at **https://danieltsen.com/** (hammerheadllama.github.io redirects there). Plain static files with no build step, served by GitHub Pages.
 
 ## Pages (keep these filenames and the links stay the same)
 
