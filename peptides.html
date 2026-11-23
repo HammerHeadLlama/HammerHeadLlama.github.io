@@ -34,86 +34,115 @@
 </header>
 <main id="main" class="page">
   <header class="hero">
-    <p class="district">Bio lab <span>· GMU Young Scholars</span></p>
-    <h1>Peptide self-assembly from sequence</h1>
-    <p class="lede">Some short peptides assemble into ordered nanostructures on their own. Most don’t. I built three pipelines that predict which, from the amino-acid sequence alone.</p>
-    <p class="meta"><b>NextGen Science: Machine Learning &amp; Bioinformatics</b>, George Mason University Young Scholars Research Program · Oct to Dec 2025 · with Christopher Lockhart · Orange Data Mining, Python</p>
-    <figure class="hero-canvas"><canvas id="pep-hero" aria-hidden="true"></canvas><figcaption class="w-note">Illustration. Some chains find each other and stack, most drift past.</figcaption></figure>
+    <p class="addr"><b>B2</b> <span>Bio Lab</span> <span>GMU Young Scholars</span></p>
+    <div class="title">
+      <h1>Peptide self-assembly from sequence</h1>
+      <p class="lede">Some short peptides assemble into ordered nanostructures on their own. Most don’t. I built three pipelines that predict which, from the amino-acid sequence alone.</p>
+      <p class="meta"><b>NextGen Science: Machine Learning &amp; Bioinformatics</b>, George Mason University Young Scholars Research Program · Oct to Dec 2025 · with Christopher Lockhart · Orange Data Mining, Python</p>
+    </div>
+    <div class="plate"><svg class="map" viewBox="0 0 316 228" width="316" height="228" role="img" aria-label="Map: Bio Lab at grid B2" focusable="false"><rect class="blk" x="8" y="8" width="36" height="36"/><rect class="blk" x="52" y="8" width="36" height="36"/><rect class="blk" x="96" y="8" width="36" height="36"/><rect class="blk" x="140" y="8" width="36" height="36"/><rect class="blk" x="184" y="8" width="36" height="36"/><rect class="blk" x="228" y="8" width="36" height="36"/><rect class="blk" x="272" y="8" width="36" height="36"/><rect class="blk" x="8" y="52" width="36" height="36"/><rect class="blk" x="52" y="52" width="36" height="36"/><rect class="blk" x="96" y="52" width="36" height="36"/><rect class="blk" x="140" y="52" width="36" height="36"/><rect class="blk" x="184" y="52" width="36" height="36"/><rect class="blk" x="228" y="52" width="36" height="36"/><rect class="blk" x="272" y="52" width="36" height="36"/><rect class="blk" x="8" y="96" width="36" height="36"/><rect class="blk" x="52" y="96" width="36" height="36"/><rect class="blk" x="96" y="96" width="36" height="36"/><rect class="blk" x="140" y="96" width="36" height="36"/><rect class="blk" x="184" y="96" width="36" height="36"/><rect class="blk" x="228" y="96" width="36" height="36"/><rect class="blk" x="272" y="96" width="36" height="36"/><rect class="blk" x="8" y="140" width="36" height="36"/><rect class="blk" x="52" y="140" width="36" height="36"/><rect class="blk" x="96" y="140" width="36" height="36"/><rect class="blk" x="140" y="140" width="36" height="36"/><rect class="blk" x="184" y="140" width="36" height="36"/><rect class="blk" x="228" y="140" width="36" height="36"/><rect class="blk" x="272" y="140" width="36" height="36"/><rect class="blk" x="8" y="184" width="36" height="36"/><rect class="blk" x="52" y="184" width="36" height="36"/><rect class="blk" x="96" y="184" width="36" height="36"/><rect class="blk" x="140" y="184" width="36" height="36"/><rect class="blk" x="184" y="184" width="36" height="36"/><rect class="blk" x="228" y="184" width="36" height="36"/><rect class="blk" x="272" y="184" width="36" height="36"/><rect class="bld here" x="58" y="58" width="24" height="24"/><rect class="here-in" x="63" y="63" width="14" height="14"/><rect class="bld" x="146" y="58" width="24" height="24"/><rect class="bld" x="234" y="14" width="24" height="24"/><rect class="bld" x="234" y="146" width="24" height="24"/><rect class="bld" x="58" y="146" width="24" height="24"/><rect class="bld" x="146" y="146" width="24" height="24"/><rect class="bld" x="278" y="102" width="24" height="24"/></svg><p><span>You are here</span><b>B2 Bio Lab</b></p></div>
+    <figure class="lead hero-canvas"><canvas id="pep-hero" aria-hidden="true"></canvas><figcaption class="w-note">Illustration. Some chains find each other and stack, most drift past.</figcaption></figure>
   </header>
+  <div class="stats">
+    <p class="key-k">Key</p>
+    <div class="stat"><b>0.996</b><span>best cross-validated AUC, an upper bound: oversampling ran before the split</span></div>
+    <div class="stat"><b>3</b><span>pipelines, each above AUC 0.99 with at least one model</span></div>
+    <div class="stat"><b>Published</b><span>Jan 1, 2026, GMU Young Scholars Research Program</span></div>
+  </div>
+  <details class="jump" open>
+    <summary>On this page <span>5</span></summary>
+    <nav aria-label="On this page">
+      <a href="#result"><span>B2.1</span>All three above AUC 0.99<i aria-hidden="true">↓</i></a>
+      <a href="#method"><span>B2.2</span>Three ways to turn a sequence into numbers<i aria-hidden="true">↓</i></a>
+      <a href="#kmer-h-sec"><span>B2.3</span>k-mer counting<i aria-hidden="true">↓</i></a>
+      <a href="#paper"><span>B2.4</span>Paper<i aria-hidden="true">↓</i></a>
+      <a href="#limits"><span>B2.5–6</span>Limits · Credit<i aria-hidden="true">↓</i></a>
+    </nav>
+  </details>
 
-  <section class="block" aria-labelledby="res-h">
-    <div class="label"><b>Result</b>Cross-validated</div>
+  <section class="block" id="result" aria-labelledby="res-h">
+    <p class="idx"><span><b>B2</b>.1</span><small>Cross-validated</small></p>
     <div class="body">
       <h2 id="res-h">All three above AUC 0.99</h2>
       <div class="tbl-wrap"><table class="tbl">
         <thead><tr><th scope="col">Pipeline</th><th scope="col">Best model</th><th scope="col">CV AUC</th><th scope="col">Other metrics</th></tr></thead>
         <tbody>
-          <tr><td>Physicochemical descriptors</td><td>AdaBoost</td><td class="n">0.996</td><td class="n">CA 0.979 · F1 0.979 · MCC 0.958</td></tr>
+          <tr><td>Physicochemical descriptors</td><td>AdaBoost</td><td class="n">0.996</td><td class="n">CA 0.979, F1 0.979, MCC 0.958</td></tr>
           <tr><td>k-mer bag of words</td><td>Neural net</td><td class="n">0.993</td><td class="n">not in table</td></tr>
           <tr><td>Engineered descriptors</td><td>not in table</td><td class="n">&gt; 0.99</td><td class="n">not in table</td></tr>
         </tbody>
       </table></div>
-      <p class="muted" style="font-size:.9rem">Every pipeline reached a cross-validated AUC above 0.99 with at least one model. Oversampling ran before the split, so treat these as upper bounds. “Not in table” marks numbers the results table doesn’t give.</p>
+      <p class="note">Every pipeline reached a cross-validated AUC above 0.99 with at least one model. Oversampling ran before the split, so treat these as upper bounds. “Not in table” marks numbers the results table doesn’t give.</p>
     </div>
   </section>
 
-  <section class="block" aria-labelledby="lim-h">
-    <div class="label"><b>Limits</b>Read with the table</div>
-    <div class="body">
-      <h2 id="lim-h">Why 0.996 is an upper bound</h2>
-      <div class="prose">
-        <p>Oversampling ran before the split. That can leak duplicates across folds and inflate the scores, so I read them as an upper bound, not a clean estimate of how the models generalize.</p>
-        <p>The paper’s abstract gives a higher figure for the k-mer pipeline than its results table supports. I use the table. Its best is 0.996.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" aria-labelledby="pipes-h">
-    <div class="label"><b>Method</b>Three representations</div>
+  <section class="block" id="method" aria-labelledby="pipes-h">
+    <p class="idx"><span><b>B2</b>.2</span><small>Method</small></p>
     <div class="body">
       <h2 id="pipes-h">Three ways to turn a sequence into numbers</h2>
-      <div class="grid3">
-        <div class="panel"><p class="w-note">PIPELINE 1</p><h3>Physicochemical descriptors</h3><p class="muted">Amino-acid physicochemical properties as features.</p></div>
-        <div class="panel"><p class="w-note">PIPELINE 2</p><h3>k-mer bag of words</h3><p class="muted">The NLP-inspired one, above. Counts of every length-k window.</p></div>
-        <div class="panel"><p class="w-note">PIPELINE 3</p><h3>Engineered descriptors</h3><p class="muted">Derived sequence descriptors built by hand.</p></div>
+      <div class="trio">
+        <article class="card"><p class="k">Pipeline 1</p><h3>Physicochemical descriptors</h3><p>Amino-acid physicochemical properties as features.</p></article>
+        <article class="card"><p class="k">Pipeline 2</p><h3>k-mer bag of words</h3><p>The NLP-inspired one, below. Counts of every length-k window.</p></article>
+        <article class="card"><p class="k">Pipeline 3</p><h3>Engineered descriptors</h3><p>Derived sequence descriptors built by hand.</p></article>
       </div>
       <div class="prose">
         <p>The classes were moderately imbalanced, so I used stratified oversampling. Every pipeline was scored with stratified 5-fold cross-validation across logistic regression, an RBF-kernel SVM, gradient boosting, AdaBoost and a neural net.</p>
       </div>
-      <figure><img src="assets/img/peptide-workflow.webp" width="1600" height="657" loading="lazy" decoding="async" alt="Orange Data Mining workflow: CSV import, class imbalance plot, data samplers, concatenate, corpus, text preprocessing, bag of words, learners, Test and Score, confusion matrix, ROC analysis and predictions" data-zoom><figcaption><b>Fig. 1</b>Pipeline 2 as an Orange workflow, from CSV import through class balancing and text encoding to Test and Score and ROC analysis.</figcaption></figure>
+      <figure><img src="assets/img/peptide-workflow.webp" width="1600" height="657" loading="lazy" decoding="async" alt="Orange Data Mining workflow: CSV import, class imbalance plot, data samplers, concatenate, corpus, text preprocessing, bag of words, learners, Test and Score, confusion matrix, ROC analysis and predictions" data-zoom><figcaption><b>Fig. 1</b> Pipeline 2 as an Orange workflow, from CSV import through class balancing and text encoding to Test and Score and ROC analysis.</figcaption></figure>
     </div>
   </section>
 
-  <section class="block" aria-labelledby="km-h">
-    <div class="label"><b>Try it</b>k-mer counting</div>
+  <section class="block" id="kmer-h-sec" aria-labelledby="km-h">
+    <p class="idx"><span><b>B2</b>.3</span><small>Try it</small></p>
     <div class="body">
-      <h2 id="km-h" class="sr">k-mer counting</h2>
-  <div class="widget" id="kmer">
-    <div class="w-head"><b>The idea behind pipeline 2</b><span>k-mer bag of words</span></div>
-    <p class="muted" style="font-size:.95rem">Text models count words. Pipeline 2 counts every length-k window of the sequence the same way, and each distinct k-mer becomes one feature. Type any sequence in one-letter amino-acid code. This one is made up.</p>
-    <label for="km-in" class="w-note">Sequence</label>
-    <input type="text" id="km-in" value="PKVLFEGAWKLVKE" maxlength="80" spellcheck="false" autocomplete="off">
-    <div style="display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center"><span class="w-note">k =</span><div class="seg" role="group" aria-label="k-mer length"><button type="button" data-k="1" aria-pressed="false">1</button><button type="button" data-k="2" aria-pressed="true">2</button><button type="button" data-k="3" aria-pressed="false">3</button></div></div>
-    <ul class="kmers" id="km-chips" aria-live="polite"></ul>
-    <p class="w-note" id="km-stats"></p>
-    <p class="w-note" id="km-warn" style="color:var(--amber)"></p>
-  </div>
-
-    </div>
-  </section>
-
-  <section class="block" aria-labelledby="paper-h">
-    <div class="label"><b>Paper</b>Published Jan 1, 2026</div>
-    <div class="body">
-      <h2 id="paper-h" class="sr">Paper</h2>
-      <div class="panel" style="display:grid;gap:.8rem;max-width:46rem">
-        <h3>Predicting Peptide Self-Assembly Using Machine Learning: A Comparative Study of Sequence-Based Feature Representations</h3>
-        <p class="muted">Daniel Tsen and Christopher Lockhart (George Mason University). GMU Young Scholars Research Program, Jan 1, 2026.</p>
-        <div><a class="btn" href="https://doi.org/10.13021/MARS/15267" rel="noopener">doi:10.13021/MARS/15267 ↗</a></div>
+      <h2 id="km-h">k-mer counting</h2>
+      <div class="widget" id="kmer">
+      <div class="w-head"><b>The idea behind pipeline 2</b><span>k-mer bag of words</span></div>
+      <p class="muted">Text models count words. Pipeline 2 counts every length-k window of the sequence the same way, and each distinct k-mer becomes one feature. Type any sequence in one-letter amino-acid code. This one is made up.</p>
+      <label for="km-in" class="w-note">Sequence</label>
+      <input type="text" id="km-in" value="PKVLFEGAWKLVKE" maxlength="80" spellcheck="false" autocomplete="off">
+      <div class="w-row"><span class="w-note">k =</span><div class="seg" role="group" aria-label="k-mer length"><button type="button" data-k="1" aria-pressed="false">1</button><button type="button" data-k="2" aria-pressed="true">2</button><button type="button" data-k="3" aria-pressed="false">3</button></div></div>
+      <ul class="kmers" id="km-chips" aria-live="polite"></ul>
+      <p class="w-note" id="km-stats"></p>
+      <p class="w-note warn" id="km-warn"></p>
       </div>
     </div>
   </section>
-<nav class="next" aria-label="Next stop"><a href="exoplanet.html"><span>Next stop</span><b>The observatory →</b></a><a href="index.html"><span>Back to</span><b>The city map</b></a></nav>
+
+  <section class="block" id="paper" aria-labelledby="paper-h">
+    <p class="idx"><span><b>B2</b>.4</span><small>Jan 1, 2026</small></p>
+    <div class="body">
+      <h2 id="paper-h">Paper</h2>
+      <article class="card paper">
+        <h3>Predicting Peptide Self-Assembly Using Machine Learning: A Comparative Study of Sequence-Based Feature Representations</h3>
+        <p class="muted">Daniel Tsen and Christopher Lockhart (George Mason University). GMU Young Scholars Research Program, Jan 1, 2026.</p>
+        <p><a class="btn" href="https://doi.org/10.13021/MARS/15267" rel="noopener">doi:10.13021/MARS/15267 ↗</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="limits" aria-labelledby="lim-h">
+    <p class="idx"><span><b>B2</b>.5</span></p>
+    <div class="body">
+      <h2 id="lim-h">Limits</h2>
+      <dl class="facts">
+        <dt>Leakage</dt><dd>Oversampling ran before the split. That can leak duplicates across folds and inflate the scores, so I read them as an upper bound, not a clean estimate of how the models generalize.</dd>
+        <dt>Abstract</dt><dd>The paper’s abstract gives a higher figure for the k-mer pipeline than its results table supports. I use the table. Its best is 0.996.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block" id="credit" aria-labelledby="cred-h">
+    <p class="idx"><span><b>B2</b>.6</span></p>
+    <div class="body">
+      <h2 id="cred-h">Credit</h2>
+      <dl class="facts">
+        <dt>Co-author</dt><dd>Christopher Lockhart, George Mason University.</dd>
+        <dt>Program</dt><dd>NextGen Science: Machine Learning &amp; Bioinformatics, GMU Young Scholars Research Program.</dd>
+      </dl>
+    </div>
+  </section>
+<nav class="next" aria-label="Next stop"><a href="simulation.html"><span>← D2</span><b>Lab</b></a><a href="exoplanet.html"><span>F1 →</span><b>Observatory</b></a></nav>
 </main>
 <footer class="foot">
   <div class="foot-in">
