@@ -703,7 +703,7 @@
     panel.hidden = false; wrap.classList.add('panel-open');
     if (!reduce) { panel.classList.remove('pop'); void panel.offsetWidth; panel.classList.add('pop'); }
   }
-  function closePanel() { if (panel) panel.hidden = true; wrap.classList.remove('panel-open'); openId = null; }
+  function closePanel() { var had = panel && panel.contains(document.activeElement); if (panel) panel.hidden = true; wrap.classList.remove('panel-open'); openId = null; if (had) canvas.focus({ preventScroll: true }); }
   var close = $('bp-close'); if (close) close.addEventListener('click', closePanel);
   var enterBtn = $('bp-enter');
   if (enterBtn) enterBtn.addEventListener('click', function (ev) {

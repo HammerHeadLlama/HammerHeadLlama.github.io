@@ -20,6 +20,7 @@
 /* Hallmark · honors.html (B4): reworded the dotted results to commas and spelled out "HM" as "Honorable Mention in Algebra" · gate 63, and the audit named HM as unexplained. Dropped the .flap uppercase tracking (DESIGN.md 3.2 keeps mono caps for codes, table heads and dt only). Added visible h2s "Competition results" and "Papers", a Key strip from the board's own rows */
 /* Hallmark · about.html (D4): the portrait and facts move into the hero lead; the contact section takes the Post Office code G3 (DESIGN.md § 1). Dropped kickers "Logs / How physics started", "Off the clock / When I’m not building", "Training / School and courses", "Post office / Contact" · DESIGN.md 3.3; their first words now sit in .idx. The hobby bento becomes the shared card grid (DESIGN.md 3.5). Middle dots in the facts and hobby labels became semicolons and commas, gate 63 */
 /* Hallmark · index.html (MAP): dropped p.district "Hong Kong · Taipei" for a .where line "MAP Hong Kong, Taipei", and the kickers "The work / Lab, research, builds" and "Now / Nov 2026" · DESIGN.md 3.3; their h2s "Start here" and "What I’m doing now" are now visible. Directory codes "LAB · URBAN INFORMATICS", "BIO LAB", "OBSERVATORY", "WORKSHOP", "HALL", "HOME" became grid codes (D2 Lab, B2 Bio Lab, F1 Observatory, F4 Workshop, B4 Hall, D4 Home) by DESIGN.md 3.11. The HUD collapses under 1000px (3.11). 404.html takes the hero address; § 18 retires .district and .label */
+/* Hallmark · step 5 motion (emil-design-eng): --ease-out and --dur-press added; card lifts gated to fine pointers; press is scale(.97) in 140ms; #bpanel and k-mer chips fade in with their move; lightbox enters with @starting-style; reduced motion swaps moves for 150ms fades and keeps every state colour */
 /* Hallmark · waive 25 · .prose and the bench rows run about 85 characters a line in IBM Plex Sans at 17px · DESIGN.md § 2 locks the body measure at 42rem for every page, and Simulation shares it */
 /* Hallmark · waive 77 · builds.html F4.1 and the key strip read thin · F4.1 is the tournament paragraph that frames F4.2 and F4.3, and the key strip is DESIGN.md 3.4 */
 
@@ -94,6 +95,8 @@
   --r-round:999px;
   --shadow-lift:0 12px 32px rgba(0,0,0,.45);
   --ease:cubic-bezier(.2,.8,.2,1);
+  --ease-out:cubic-bezier(.23,1,.32,1);   /* step 5: strong ease-out for presses, lifts and entrances */
+  --dur-press:140ms;                     /* step 5: button press feedback */
   --dur:180ms;
 
   color-scheme:dark;
@@ -199,7 +202,7 @@ section.block::before{content:"";position:absolute;left:0;right:0;top:-6px;heigh
 .block > .full{grid-column:1 / -1;min-width:0}
 
 /* ---------- 10. Cards (3.5) ---------- */
-.card,.dir,.hob{background:var(--panel-solid);border:1px solid var(--line);border-radius:var(--r);padding:var(--s-5);min-width:0;transition:border-color var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.card,.dir,.hob{background:var(--panel-solid);border:1px solid var(--line);border-radius:var(--r);padding:var(--s-5);min-width:0;transition:border-color var(--dur) var(--ease),transform var(--dur) var(--ease-out)}
 .card{display:grid;gap:var(--s-3)}
 .card.wide{grid-column:1 / -1}
 .card[id]{scroll-margin-top:calc(var(--nav-h) + var(--s-7))}
@@ -211,11 +214,12 @@ section.block::before{content:"";position:absolute;left:0;right:0;top:-6px;heigh
 
 /* Next stop */
 .next{margin-top:var(--s-7);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:var(--s-5)}
-.next a{display:grid;gap:var(--s-1);min-height:var(--tap);background:var(--panel-solid);border:1px solid var(--line);border-radius:var(--r);padding:var(--s-5);text-decoration:none;color:var(--ink);transition:border-color var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.next a{display:grid;gap:var(--s-1);min-height:var(--tap);background:var(--panel-solid);border:1px solid var(--line);border-radius:var(--r);padding:var(--s-5);text-decoration:none;color:var(--ink);transition:border-color var(--dur) var(--ease),transform var(--dur) var(--ease-out)}
 .next a + a{text-align:end}
 .next a span{font-family:var(--mono);font-size:var(--t-12);color:var(--ink-3)}
 .next a b{font-family:var(--display);font-stretch:var(--display-stretch);font-weight:var(--display-weight);font-size:var(--t-21);line-height:1.2}
-.next a:hover,.next a:focus-visible{border-color:var(--amber);transform:translateY(-2px);color:var(--ink)}
+.next a:hover,.next a:focus-visible{border-color:var(--amber);color:var(--ink)}
+@media (hover:hover) and (pointer:fine){.next a:hover{transform:translateY(-2px)}}
 .next a:hover span{color:var(--amber)}
 
 /* ---------- 11. Figures (3.6) ---------- */
@@ -250,9 +254,10 @@ figcaption b{font-family:var(--mono);font-weight:500;color:var(--cyan);margin-ri
 .links .note{color:var(--ink-3)}
 
 /* ---------- 14. Buttons, inputs, widgets (3.9) ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s-2);min-height:var(--tap);font:500 var(--t-14)/1.2 var(--sans);color:var(--on-amber);background:var(--amber);border:1px solid var(--amber);border-radius:var(--r);padding:var(--s-2) var(--s-4);cursor:pointer;text-decoration:none;white-space:nowrap;transition:background-color var(--dur) var(--ease),border-color var(--dur) var(--ease),color var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s-2);min-height:var(--tap);font:500 var(--t-14)/1.2 var(--sans);color:var(--on-amber);background:var(--amber);border:1px solid var(--amber);border-radius:var(--r);padding:var(--s-2) var(--s-4);cursor:pointer;text-decoration:none;white-space:nowrap;transition:background-color var(--dur) var(--ease),border-color var(--dur) var(--ease),color var(--dur) var(--ease),transform var(--dur-press) var(--ease-out)}
 .btn:hover{color:var(--on-amber);background:var(--amber-hover);border-color:var(--amber-hover)}
-.btn:active{transform:translateY(1px)}
+.btn:active{transform:scale(.97);transition-duration:var(--dur-press)}
+.seg button:active{transform:scale(.97)}
 .btn:disabled,.btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed;transform:none}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-control)}
 .btn.ghost:hover{border-color:var(--amber);color:var(--amber)}
@@ -286,14 +291,15 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 #h-state.hit{color:var(--amber)}
 #h-state.miss{color:var(--ink-2)}
 .seg{display:inline-flex;border:1px solid var(--line-control);border-radius:var(--r);overflow:hidden}
-.seg button{min-height:40px;font:500 var(--t-14) var(--mono);color:var(--ink-2);background:transparent;border:0;padding:var(--s-2) var(--s-3);cursor:pointer;transition:background-color var(--dur) var(--ease),color var(--dur) var(--ease)}
+.seg button{min-height:40px;font:500 var(--t-14) var(--mono);color:var(--ink-2);background:transparent;border:0;padding:var(--s-2) var(--s-3);cursor:pointer;transition:background-color var(--dur) var(--ease),color var(--dur) var(--ease),transform var(--dur-press) var(--ease-out)}
 .seg button:hover{color:var(--amber)}
 .seg button[aria-pressed="true"]{background:var(--amber);color:var(--on-amber)}
 .kmers{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--s-1);max-height:13rem;overflow:auto}
-.kmers li{font-family:var(--mono);font-size:var(--t-14);display:flex;gap:var(--s-1);align-items:baseline;border:1px solid var(--cyan-line);background:var(--cyan-soft);border-radius:var(--r);padding:0 var(--s-2);animation:pop .35s var(--ease) both}
+.kmers li{font-family:var(--mono);font-size:var(--t-14);display:flex;gap:var(--s-1);align-items:baseline;border:1px solid var(--cyan-line);background:var(--cyan-soft);border-radius:var(--r);padding:0 var(--s-2);animation:pop 200ms var(--ease-out) both}
 .kmers li b{color:var(--ink);font-weight:500}
 .kmers li span{color:var(--ink-3);font-size:var(--t-12)}
-@keyframes pop{from{transform:translateY(4px)}to{transform:none}}
+@keyframes pop{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
 #transit{width:100%;height:clamp(300px,42vw,380px);display:block;border-radius:var(--r);background:var(--ground)}
 .readout{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-5);font-family:var(--mono);font-size:var(--t-14);color:var(--ink-2)}
 .readout b{color:var(--ink);font-weight:500}
@@ -307,7 +313,9 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 
 /* ---------- 16. Lightbox ---------- */
 #lightbox{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh;color:var(--ink)}
-#lightbox::backdrop{background:var(--scrim)}
+#lightbox::backdrop{background:var(--scrim);transition:opacity 200ms var(--ease-out)}
+#lightbox[open]{transition:opacity 200ms var(--ease-out),transform 200ms var(--ease-out)}
+@starting-style{#lightbox[open]{opacity:0;transform:scale(.98)}#lightbox[open]::backdrop{opacity:0}}
 #lightbox img{max-height:84vh;width:auto;margin:0 auto;border-radius:var(--r);border:1px solid var(--line-2);box-shadow:var(--shadow-lift)}
 #lightbox p{margin-top:var(--s-2);font-size:var(--t-14);color:var(--ink-2);text-align:center}
 #lightbox button{position:fixed;top:max(12px,env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px))}
@@ -350,8 +358,8 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .walk-hint{margin:0;font-size:var(--t-14);line-height:1.45;color:var(--ink);background:var(--panel-glass);border:1px solid var(--amber);border-radius:var(--r);padding:var(--s-3)}
 .walk-hint b{color:var(--amber);font-family:var(--mono);font-weight:500;font-size:var(--t-12);display:block;margin-bottom:var(--s-1)}
 #bpanel{position:absolute;z-index:4;top:clamp(1.5rem,5vh,3.5rem);left:max(24px,calc((100vw - var(--wrap))/2 + 16px));width:min(400px,34vw);background:var(--panel-solid);color:var(--ink);border:1px solid var(--amber);border-radius:var(--r);padding:var(--s-5);display:grid;gap:var(--s-2)}
-#bpanel.pop{animation:panel .28s var(--ease)}
-@keyframes panel{from{transform:translateY(8px) scale(.98)}to{transform:none}}
+#bpanel.pop{animation:panel 220ms var(--ease-out);transform-origin:top left}
+@keyframes panel{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
 #bp-kicker{font-family:var(--mono);font-size:var(--t-12);color:var(--amber)}
 #bp-title{font-size:var(--t-21)}
 #bp-text{font-size:var(--t-14);color:var(--ink)}
@@ -362,7 +370,8 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .city-wrap.walking #city{cursor:crosshair}
 .directory{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:var(--s-4)}
 .dir{position:relative;display:grid;align-content:start;gap:var(--s-2);text-decoration:none;color:var(--ink);overflow:hidden}
-.dir:hover,.dir:focus-visible{border-color:var(--amber);color:var(--ink);transform:translateY(-2px)}
+.dir:hover,.dir:focus-visible{border-color:var(--amber);color:var(--ink)}
+@media (hover:hover) and (pointer:fine){.dir:hover{transform:translateY(-2px)}}
 .dir.feature{grid-column:span 2}
 .dir.compact h3{font-size:var(--t-17)}
 .dir p{font-size:var(--t-14);color:var(--ink-2)}
@@ -569,6 +578,10 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 /* ---------- 20. Reduced motion (3.10): drop transforms and long animations, keep state colours ---------- */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .btn:active,.next a:hover,.next a:focus-visible,.dir:hover,.dir:focus-visible,.hob:hover{transform:none}
-  #bpanel.pop,.kmers li{animation:none}
+  .btn:active,.seg button:active,.next a:hover,.next a:focus-visible,.dir:hover,.dir:focus-visible,.hob:hover{transform:none}
+  #bpanel.pop{animation:fade 150ms var(--ease)}
+  .kmers li{animation:fade 150ms var(--ease) both}
+  #lightbox[open]{transform:none}
+  @starting-style{#lightbox[open]{transform:none}}
 }
+
