@@ -7,6 +7,13 @@
 /* Hallmark · waive 39b · .btn.small stands 40px on desktop and 44px under 1000px · DESIGN.md 3.9 keeps the gate presets at 40px+ so three fit on one row of the widget */
 /* Hallmark · reworded simulation.html figure labels to page order (TAAI photo Fig. 1, 500-agent run Rec. 3) · the owner chose the TAAI photo as lead and the 500-agent run in Results */
 /* Hallmark · dropped simulation.html section kickers ("Why it exists", "Agent-to-agent gate", "Deterministic replay", "Fork and compare", "Days and events", "Transport", "Gates 0–7", "And how I present them", "Before anyone asks", "Who built what") · DESIGN.md 3.3 retires .label; .idx keeps only a word or date the heading lacks */
+/* Hallmark · dropped pump-tub-1.webp · builds.html: it sat only in the retired reel and is a duplicate of the Wirtz video poster; the reel's other photos now sit in their sections */
+/* Hallmark · dropped .reel and the builds.html kickers (HKYPT 2024–25 team lead line, Problem 16, Problem 7 co-led line, VEX Robotics Taipei Wego line, The rest of the bench) · DESIGN.md 3.3 and § 4 retire them; years and problem numbers moved to .idx, roles to the Credit table */
+/* Hallmark · reworded "High Stakes" and "Over Under" (the 23083Z and 23083Y headings) to colon and comma form, plus the dotted bench meta · gate 63 names middle-dot strings; the footer line stays dotted by DESIGN.md 3.8 */
+/* Hallmark · builds.html adds Fig. and Rec. labels in page order, a Key strip, Limits and Credit built from facts already on the page, captions for three moved photos and a poster frame for ruler-launch.mp4 · DESIGN.md 3.4, 3.6 and 3.7 */
+/* Hallmark · waive 44c · builds.html hero ends at 1044px at 1440 · DESIGN.md 3.2 puts the lead asset inside the hero; the h1 and lede sit well above the 800px fold */
+/* Hallmark · waive 25 · .prose and the bench rows run about 85 characters a line in IBM Plex Sans at 17px · DESIGN.md § 2 locks the body measure at 42rem for every page, and Simulation shares it */
+/* Hallmark · waive 77 · builds.html F4.1 and the key strip read thin · F4.1 is the tournament paragraph that frames F4.2 and F4.3, and the key strip is DESIGN.md 3.4 */
 
 /* =========================================================
    Layout concept: a city at night. Every page is a building on one street grid.
@@ -209,7 +216,7 @@ figure img,figure video{width:100%;border:1px solid var(--line);border-radius:va
 figure.narrow{max-width:40rem}
 img[data-zoom]{cursor:zoom-in}
 figcaption{font-size:var(--t-14);color:var(--ink-2);line-height:1.5;max-width:60ch}
-figcaption b{font-family:var(--mono);font-weight:500;color:var(--cyan);margin-right:.45em}
+figcaption b{font-family:var(--mono);font-weight:500;color:var(--cyan);margin-right:.2em}
 .tag-sim{display:inline-block;font-family:var(--mono);font-size:var(--t-12);line-height:1.4;color:var(--ink-3);border:1px solid var(--line-2);border-radius:var(--r);padding:0 var(--s-1);margin-left:var(--s-1);white-space:nowrap;vertical-align:baseline}
 .figrow{display:grid;gap:var(--s-5);grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));align-items:start}
 .figrow img{max-height:34rem;object-fit:contain}
@@ -353,8 +360,43 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .now li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:var(--s-4);align-items:baseline}
 .now li span{font-family:var(--mono);font-size:var(--t-12);color:var(--ink-3)}
 
+/* ---------- 17b. Workshop (builds.html, F4) ---------- */
+.hero > .lead.pair{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,3fr);gap:var(--s-4);align-items:start;max-width:44rem}
+.split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--s-7);align-items:start}
+.split .prose h3{margin-top:var(--s-1)}
+.stack{display:grid;gap:var(--s-5);min-width:0}
+.stack .stats{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-4)}
+.stack .stat b{white-space:nowrap;font-size:var(--t-21)}
+.gallery{display:grid;gap:var(--s-4);min-width:0}
+.gallery.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gallery.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gallery.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.gallery.notes{max-width:40rem}
+.shot{margin:0;display:grid;gap:var(--s-2);align-content:start;overflow:hidden}
+.shot img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-solid)}
+.shot.wide{grid-column:1 / -1}
+.shot.wide img{aspect-ratio:4/3}
+.gallery.g3 .shot img,.shot.chart img{aspect-ratio:auto;object-fit:contain}
+.shot.chart img{padding:var(--s-2)}
+.shot figcaption{font-size:var(--t-14);color:var(--ink-2)}
+.filters{display:flex;flex-wrap:wrap;gap:var(--s-2);align-items:center}
+.filters .count{font-family:var(--mono);font-size:var(--t-12);color:var(--ink-3);margin-left:var(--s-2)}
+.bench{display:grid;gap:var(--s-6)}
+.bench-g{display:grid}
+.bench-g:not(:has(.row:not([hidden]))){display:none}
+.bench-k{font-size:var(--t-14);font-weight:600;color:var(--ink-2);padding-bottom:var(--s-2);border-bottom:1px solid var(--line-2)}
+.row{display:grid;grid-template-columns:12rem minmax(0,1fr) auto;gap:var(--s-2) var(--s-6);padding-block:var(--s-5);border-bottom:1px solid var(--line)}
+.row .k{margin:0;display:grid;gap:var(--s-1);align-content:start;font-family:var(--mono);font-size:var(--t-12);line-height:1.5;color:var(--ink-3)}
+.row .k b{font-weight:500;color:var(--ink-2)}
+.row-b{display:grid;gap:var(--s-2);align-content:start;max-width:42rem;min-width:0}
+.row-b p{color:var(--ink-2)}
+.row-b .held{border-left:2px solid var(--line-2);padding-left:var(--s-3)}
+.thumbs{width:7rem}
+.thumbs figure{gap:0}
+.thumbs img{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:var(--r);border:1px solid var(--line)}
+
 /* ---------- 18. Pages not yet migrated ----------
-   About, Peptides, Exoplanet, Builds, Honors, 404 and the home sections still use these classes.
+   About, Peptides, Exoplanet, Honors, 404 and the home sections still use these classes.
    Each goes in that page's own PR (DESIGN.md § 4 retires most of them). Restyled to tokens only. */
 .district{margin:0;font-family:var(--mono);font-size:var(--t-14);color:var(--amber)}
 .district span{color:var(--ink-3)}
@@ -403,29 +445,6 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .hob-lang .muted{flex:1 1 20rem}
 .hob-chair{grid-row:span 2;align-content:start;gap:var(--s-2)}
 .hob-chair video{max-height:26rem;object-fit:cover}
-/* Builds */
-.filters{display:flex;flex-wrap:wrap;gap:var(--s-2);align-items:center}
-.filters .count{font-family:var(--mono);font-size:var(--t-12);color:var(--ink-3);margin-left:var(--s-2)}
-.thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:var(--s-2)}
-.thumbs img{aspect-ratio:3/4;object-fit:cover;width:100%;max-height:240px;border-radius:var(--r);border:1px solid var(--line)}
-.thumbs.land img{aspect-ratio:4/3}
-.reel{overflow-x:auto;padding-block:var(--s-2) var(--s-6)}
-.reel-track{display:flex;gap:var(--s-3);width:max-content;padding-inline:var(--gutter) var(--gutter-r)}
-.reel-dup{display:none}
-.reel img{height:clamp(170px,22vw,250px);width:auto;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-solid);object-fit:cover}
-.split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--s-7);align-items:start}
-.split .prose h3{margin-top:var(--s-1)}
-.stack{display:grid;gap:var(--s-4);min-width:0}
-.gallery{display:grid;gap:var(--s-4);min-width:0}
-.gallery.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.gallery.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.gallery.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
-.shot{margin:0;display:grid;gap:var(--s-1);align-content:start;overflow:hidden}
-.shot img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r);border:1px solid var(--line);background:var(--panel-solid)}
-.gallery.g3 .shot img{aspect-ratio:auto}
-.shot.chart img{aspect-ratio:auto;object-fit:contain;padding:var(--s-2)}
-.shot figcaption{font-size:var(--t-12);color:var(--ink-3)}
-.feature .stat b{white-space:nowrap}
 /* Honors board */
 .board{background:var(--ground);border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden}
 .board-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s-2) var(--s-4);padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line-2);font-family:var(--mono);font-size:var(--t-14);color:var(--amber)}
@@ -464,6 +483,7 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 }
 @media (width < 900px){
   .grid3,.split{grid-template-columns:minmax(0,1fr)}
+  .gallery.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hobbies{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hob-wide{grid-column:1 / -1;grid-row:auto}
 }
@@ -498,7 +518,10 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
   .pan{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r)}
   .pan img{min-width:680px;border:0}
   .sliders{grid-template-columns:minmax(0,1fr)}
-  .gallery.g3,.gallery.g4,.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gallery.g3,.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .row{grid-template-columns:minmax(0,1fr) auto}
+  .row .k{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:0 var(--s-3)}
+  .thumbs{width:5.5rem}
 }
 @media (width < 760px){
   .about-top,.grid2{grid-template-columns:minmax(0,1fr)}

@@ -79,7 +79,7 @@
   if (cur && cur.parentNode.scrollWidth > cur.parentNode.clientWidth) cur.parentNode.scrollLeft = cur.offsetLeft - 16;
 
   /* Jump list: open on desktop, closed under 820px (DESIGN.md 3.2) */
-  var jl = $('details.jump'); if (jl && window.matchMedia && window.matchMedia('(max-width: 819.98px)').matches) jl.removeAttribute('open');
+  var jl = $('details.jump'); if (jl && window.matchMedia) { var jmq = window.matchMedia('(max-width: 819.98px)'); if (jmq.matches) jl.removeAttribute('open'); var jopen = function (e) { if (!e.matches) jl.setAttribute('open', ''); }; if (jmq.addEventListener) jmq.addEventListener('change', jopen); else if (jmq.addListener) jmq.addListener(jopen); }
 
   /* Builds filter */
   var filters = $$('[data-filter]');
