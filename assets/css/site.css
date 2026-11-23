@@ -16,6 +16,8 @@
 /* Hallmark · peptides.html (B2): dropped kickers "Result / Cross-validated", "Limits / Read with the table", "Method / Three representations", "Try it / k-mer counting", "Paper / Published Jan 1, 2026" · DESIGN.md 3.3; the dates and words now sit in .idx. Fixed "the NLP-inspired one, above" to "below": the widget sits below. Added a Key strip and a Credit table from facts already on the page; metrics joined with commas, gate 63 */
 /* Hallmark · reworded "Transit widget" to "The transit method" · the h2 was screen-reader only; DESIGN.md 3.3 makes it visible, and the old kicker text names it better */
 /* Hallmark · exoplanet.html (F1): dropped kickers "Result / TOI 5147.01", "Method / Frame to light curve", "Try it / The transit method", "Off the clock / My own telescope" · DESIGN.md 3.3. The light curve leads the hero, so figures renumber (light curve Fig. 1, raw frame Fig. 2). Added a Key strip, Limits from the verified record and Credit from the page */
+/* Hallmark · reworded "Hover a row and the board flips" out of the Honors lede · the flip only runs on mouse hover, so the line promised touch and keyboard users something that never happens; the flip stays as a hover detail */
+/* Hallmark · honors.html (B4): reworded the dotted results to commas and spelled out "HM" as "Honorable Mention in Algebra" · gate 63, and the audit named HM as unexplained. Dropped the .flap uppercase tracking (DESIGN.md 3.2 keeps mono caps for codes, table heads and dt only). Added visible h2s "Competition results" and "Papers", a Key strip from the board's own rows */
 /* Hallmark · waive 25 · .prose and the bench rows run about 85 characters a line in IBM Plex Sans at 17px · DESIGN.md § 2 locks the body measure at 42rem for every page, and Simulation shares it */
 /* Hallmark · waive 77 · builds.html F4.1 and the key strip read thin · F4.1 is the tournament paragraph that frames F4.2 and F4.3, and the key strip is DESIGN.md 3.4 */
 
@@ -417,8 +419,24 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .steps li{counter-increment:s;display:grid;grid-template-columns:3rem minmax(0,1fr);gap:var(--s-3);align-items:baseline;padding-block:var(--s-3);border-bottom:1px solid var(--line)}
 .steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--mono);font-size:var(--t-14);color:var(--cyan)}
 
+/* ---------- 17e. Hall (honors.html, B4) ---------- */
+.stats + section.block{margin-top:var(--s-6)}
+.board{background:var(--panel-solid);border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden}
+.board-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s-2) var(--s-4);padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line-2);font-family:var(--mono);font-size:var(--t-14);color:var(--ink-2)}
+.board-head span{color:var(--ink-3);font-variant-numeric:tabular-nums}
+.board table{width:100%;border-collapse:collapse}
+.board th{font-family:var(--mono);font-size:var(--t-12);font-weight:500;color:var(--ink-3);text-align:left;letter-spacing:.06em;text-transform:uppercase;padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)}
+.board td{padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line);vertical-align:baseline}
+.board tr:last-child td{border-bottom:0}
+.board tbody tr{transition:background-color var(--dur) var(--ease)}
+.board tbody tr:hover{background:var(--amber-soft)}
+.board .yr{font-family:var(--mono);font-size:var(--t-14);color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.board .ev{font-weight:500}
+.board .ev small{display:block;font-weight:400;color:var(--ink-2);font-size:var(--t-14)}
+.flap{font-family:var(--mono);font-weight:500;color:var(--amber);font-size:var(--t-14)}
+
 /* ---------- 18. Pages not yet migrated ----------
-   About, Honors, 404 and the home sections still use these classes.
+   About, 404 and the home sections still use these classes.
    Each goes in that page's own PR (DESIGN.md § 4 retires most of them). Restyled to tokens only. */
 .district{margin:0;font-family:var(--mono);font-size:var(--t-14);color:var(--amber)}
 .district span{color:var(--ink-3)}
@@ -458,20 +476,6 @@ input[type=range]{box-sizing:content-box;width:100%;height:22px;padding-block:11
 .hob-lang .muted{flex:1 1 20rem}
 .hob-chair{grid-row:span 2;align-content:start;gap:var(--s-2)}
 .hob-chair video{max-height:26rem;object-fit:cover}
-/* Honors board */
-.board{background:var(--ground);border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden}
-.board-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s-2) var(--s-4);padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line-2);font-family:var(--mono);font-size:var(--t-14);color:var(--amber)}
-.board-head span{color:var(--ink-3)}
-.board table{width:100%;border-collapse:collapse}
-.board th{font-family:var(--mono);font-size:var(--t-12);font-weight:500;color:var(--ink-3);text-align:left;letter-spacing:.06em;text-transform:uppercase;padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line)}
-.board td{padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--line);vertical-align:baseline}
-.board tr:last-child td{border-bottom:0}
-.board tbody tr{transition:background-color var(--dur) var(--ease)}
-.board tbody tr:hover,.board tbody tr:focus-within{background:var(--amber-soft)}
-.board .yr{font-family:var(--mono);font-size:var(--t-14);color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
-.board .ev{font-weight:500}
-.board .ev small{display:block;font-weight:400;color:var(--ink-3);font-size:var(--t-14)}
-.flap{font-family:var(--mono);font-weight:500;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;font-size:var(--t-14)}
 
 /* ---------- 19. Responsive ---------- */
 @media (width < 1000px){
