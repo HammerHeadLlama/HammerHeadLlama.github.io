@@ -78,6 +78,9 @@
   var cur = $('.tabs [aria-current]');
   if (cur && cur.parentNode.scrollWidth > cur.parentNode.clientWidth) cur.parentNode.scrollLeft = cur.offsetLeft - 16;
 
+  /* Jump list: open on desktop, closed under 820px (DESIGN.md 3.2) */
+  var jl = $('details.jump'); if (jl && window.matchMedia && window.matchMedia('(max-width: 819.98px)').matches) jl.removeAttribute('open');
+
   /* Builds filter */
   var filters = $$('[data-filter]');
   if (filters.length) {
